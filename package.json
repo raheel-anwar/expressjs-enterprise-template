@@ -1,0 +1,29 @@
+{
+    "name": "express-base",
+    "description": "express base template description",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/project_repository"
+    },
+    "keywords": [],
+    "author": "Author Name",
+    "license": "ISC",
+    "homepage": "https://www.project.com",
+    "dependencies": {
+        "colors": "^1.3.3",
+        "cors": "^2.8.5",
+        "debug": "^4.1.1",
+        "express": "^4.17.1",
+        "moment": "^2.24.0",
+        "morgan": "^1.9.1",
+        "cookie-parser": "^1.4.4",
+        "request-promise-native": "^1.0.7",
+        "swagger-ui-express": "^4.0.6"
+    }
+}

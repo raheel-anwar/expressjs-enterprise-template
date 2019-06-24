@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Express Base Template",
+        "version": "v1"
+    },
+    "paths": {
+        "/api/v1/users": {
+            "get": {
+                "operationId": "list_users_v1",
+                "description": "Get a list of all users",
+                "summary": "Get a list of all users",
+                "tags": [
+                    "Users"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a list of all users with 200 response",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "name": "John Doe",
+                                    "username": "john.doe",
+                                    "timestamp": "2019-06-21T08:19:55.535Z"
+                                },
+                                {
+                                    "name": "Marry Smith",
+                                    "username": "marry.smith",
+                                    "timestamp": "2019-06-21T08:19:55.535Z"
+                                },
+                                {
+                                    "name": "Dave Simmon",
+                                    "username": "dave.sim",
+                                    "timestamp": "2019-06-21T08:19:55.535Z"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/roles": {
+            "get": {
+                "operationId": "list_roles_v1",
+                "description": "Get a list of all roles",
+                "summary": "Get a list of all roles",
+                "tags": [
+                    "Roles",
+                    "Users"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a list of all roles with 200 response",
+                        "examples": {
+                            "application/json": {
+                                "roles": [
+                                    "admin",
+                                    "guest",
+                                    "manager"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ]
+}

@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+const app = require('../app');
+const debug = require('debug')('express-base:server');
+const http = require('http');
+
+const env = require('../config/environment');
+const { logger } = require('../common/index');
+
+/**
+ * Get port from environment and store in Express.
+ */
+app.set('port', parseInt(env.PORT));
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(parseInt(env.PORT), env.HOST);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening() {
+    logger.log(`Server is listening on http://${server.address().address}:${server.address().port}`);
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+function onError(err) {
+    logger.error(err.message);
+    process.exit(1);
+}
